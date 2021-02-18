@@ -32,7 +32,7 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Requests
+                        <?php echo c_requests ?>
                     </h1>
                     <hr/>
                     <?php if($requests): ?>
@@ -40,9 +40,9 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>From</th>
-                                <th>To</th>
-                                <th>Date</th>
+                                <th><?php echo c_from ?></th>
+                                <th><?php echo c_to ?></th>
+                                <th><?php echo c_Date ?></th>
                             </tr>
                         </thead>
                         <tbody>

@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
 ?>
 <div class="container">
     <div class="w-50 mx-auto card card-body">
-        <h1 class="card-title">Registration Complete</h1>
+        <h1 class="card-title"><?php echo c_registrationComplete ?></h1>
         <?php
         foreach($errors as $err){ ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -61,35 +61,35 @@ if(isset($_POST['submit'])){
         ?>
         <form method="POST" action="registration_complete.php">
             <div class="form-group">
-                <label for="name">Resturan Name*:</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Resturant Name" required>
+                <label for="name"><?php echo c_ResturanName ?></label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="<?php echo c_EnterResturantName ?>" required>
             </div>
-            <h3>Address</h3>
+            <h3><?php echo c_Address ?></h3>
             <div class="form-group">
-                <label for="city">City*:</label>
-                <input type="text" class="form-control" name="city" id="name" placeholder="Enter City" required>
-            </div>
-            <div class="form-group">
-                <label for="zone">Zone:</label>
-                <input type="text" class="form-control" name="zone" id="zone" placeholder="Enter Zone">
+                <label for="city"><?php echo c_city ?></label>
+                <input type="text" class="form-control" name="city" id="name" placeholder="<?php echo c_EnterCity ?>" required>
             </div>
             <div class="form-group">
-                <label for="st">Street:</label>
-                <input type="text" class="form-control" name="street" id="st" placeholder="Enter Street">
+                <label for="zone"><?php echo c_zone ?></label>
+                <input type="text" class="form-control" name="zone" id="zone" placeholder="<?php echo c_enterZone ?>">
             </div>
             <div class="form-group">
-                <label for="no">No:</label>
-                <input type="text" class="form-control" name="no" id="no" placeholder="Enter No">
+                <label for="st"><?php echo c_Street ?></label>
+                <input type="text" class="form-control" name="street" id="st" placeholder="<?php echo c_EnterStreet ?>">
+            </div>
+            <div class="form-group">
+                <label for="no"><?php echo c_No ?></label>
+                <input type="text" class="form-control" name="no" id="no" placeholder="<?php echo c_EnterNo ?>">
             </div>
             <div class="form-group">
                 <label for="lat">Lat:</label>
-                <input type="number" class="form-control" name="lat" id="lat" placeholder="Enter Lat">
+                <input type="number" class="form-control" name="lat" id="lat" placeholder="<?php echo c_enterLat ?>">
             </div>
             <div class="form-group">
                 <label for="long">Long:</label>
-                <input type="number" class="form-control" name="long" id="long" placeholder="Enter Long">
+                <input type="number" class="form-control" name="long" id="long" placeholder="<?php echo c_enterLong ?>">
             </div>
-            <button type="submit" name="submit" class="btn btn-primary btn-block">Complete Registration</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-block"><?php echo c_registrationComplete ?></button>
         </form>
     </div>
 </div>

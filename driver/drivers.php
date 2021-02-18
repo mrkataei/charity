@@ -25,15 +25,15 @@ $drivers = mysqli_fetch_all($res, MYSQLI_ASSOC);
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Drivers
+                        <?php echo c_drivers ?>
                     </h1>
                     <hr/>
                     <?php if($drivers): ?>
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Zone</th>
-                                <th>Available Drivers</th>
+                                <th><?php echo c_zone ?></th>
+                                <th><?php echo c_availableDrivers ?></th>
                             </tr>
                         </thead>
                         <tbody>

@@ -32,7 +32,7 @@ $resturants = mysqli_fetch_all($res, MYSQLI_ASSOC);
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Resturants
+                        <?php echo c_restaurants ?>
                     </h1>
                     <hr/>
                     <?php if($resturants): ?>
@@ -40,8 +40,8 @@ $resturants = mysqli_fetch_all($res, MYSQLI_ASSOC);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Resturant</th>
-                                <th>Number</th>
+                                <th><?php echo c_restaurant ?></th>
+                                <th><?php echo c_number ?></th>
                             </tr>
                         </thead>
                         <tbody>

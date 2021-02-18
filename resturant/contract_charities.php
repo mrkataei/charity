@@ -46,7 +46,7 @@ $charities = mysqli_fetch_all($res, MYSQLI_ASSOC);
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Contract Charities
+                        <?php echo c_ContractCharities ?>
                     </h1>
                     <hr/>
                     <?php
@@ -55,7 +55,7 @@ $charities = mysqli_fetch_all($res, MYSQLI_ASSOC);
                             <?=$submit_charity_msg?>
                         </div>
                     <?php } ?>
-                    <h3>Add New Charity:</h3>
+                    <h3><?php echo c_AddNewCharity ?></h3>
                     <?php if($selectable_charities): ?>
                     <form class="form-inline mt-3" method="POST" action="contract_charities.php">
                         <div class="form-group mb-2">
@@ -67,15 +67,15 @@ $charities = mysqli_fetch_all($res, MYSQLI_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <button name="add_charity_submit" type="submit" class="btn btn-primary ml-3 mb-2">Insert</button>
+                        <button name="add_charity_submit" type="submit" class="btn btn-primary ml-3 mb-2"><?php echo c_Insert ?></button>
                     </form>
                     <?php else: ?>
                         <div class="alert alert-secondary" role="alert">
-                            No item to add.
+                            <?php echo c_NoItemToAdd ?>
                         </div>
                     <?php endif; ?>
 
-                    <h3>All Charities:</h3>
+                    <h3><?php echo c_AllCharities ?></h3>
                     <?php
                     if(isset($delete_charity_msg)){?>
                         <div class="alert alert-success" role="alert">

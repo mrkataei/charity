@@ -48,7 +48,7 @@ $request = mysqli_fetch_all($res, MYSQLI_ASSOC)
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Charity Dashboard
+                        <?php echo c_charityDashboard ?>
                     </h1>
                     <hr/>
                     <?php
@@ -59,20 +59,20 @@ $request = mysqli_fetch_all($res, MYSQLI_ASSOC)
                     <?php 
                     }
                     ?>
-                    <h4>The number of foods needed today:</h4>
+                    <h4><?php echo c_TheNumberOfFoodsNeededToday ?></h4>
                     <form class="mt-4" method="POST" action="index.php">
                         <div class="form-group row">
-                            <label class="col-2 col-form-label" for="number">Number:</label>
+                            <label class="col-2 col-form-label" for="number"><?php echo c_Number ?></label>
                             <div class="col-8">
                                 <input class="form-control" type="number" name="number" id="number" value="<?=$charity['daily_food_count']?>">
                             </div>
                             <div class="col-2">
-                                <input name="submit_number" class="btn btn-primary" type="submit" value="Update">
+                                <input name="submit_number" class="btn btn-primary" type="submit" value="<?php echo c_Update ?>">
                             </div>
                         </div>
                     </form>
 
-                    <h4 class="mt-5">Latest donated foods:</h4>
+                    <h4 class="mt-5"><?php echo c_LatestDonatedFoods ?></h4>
                     <?php if(isset($submit_rate_msg)){?>
                         <div class="alert alert-success">
                             <?=$submit_rate_msg?>
@@ -81,11 +81,11 @@ $request = mysqli_fetch_all($res, MYSQLI_ASSOC)
                     <table class="table mt-3">
                         <thead>
                             <th>#</th>
-                            <th>Resturant</th>
-                            <th>Food</th>
-                            <th>Number</th>
-                            <th>Driver</th>
-                            <th>Rate</th>
+                            <th><?php echo c_restaurant ?></th>
+                            <th><?php echo c_Food ?></th>
+                            <th><?php echo c_Number ?></th>
+                            <th><?php echo c_driver ?></th>
+                            <th><?php echo c_Rate ?></th>
                         </thead>
                         <tbody>
                             <?php

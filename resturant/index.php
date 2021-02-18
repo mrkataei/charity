@@ -21,7 +21,7 @@ $sql = '
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Resturant Dashboard
+                        <?php echo c_ResturantDashboard ?>
                     </h1>
                 </div>
             </div>

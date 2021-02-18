@@ -31,7 +31,7 @@ if(isset($_POST['submit_status'])){
         if($status != $driver['status'] OR $zone!=$driver['covered_zone'])
             mysqli_query($conn, $sql2);
 
-        $submit_status_msg = "Status Updated.";
+        $submit_status_msg = c_statusUpdated;
         $driver = get_driver();
     }
 }
@@ -73,7 +73,7 @@ if(mysqli_num_rows($res) > 0){
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Driver Dashboard
+                        <?php echo c_driverDashboard ?>
                     </h1>
                     <hr/>
                     <?php
@@ -84,22 +84,22 @@ if(mysqli_num_rows($res) > 0){
                     <?php 
                     }
                     ?>
-                    <h3>Change status, location and zone:</h3>
+                    <h3><?php echo c_changeStatusLocationAndZone ?></h3>
                     <form class="mt-4" method="POST" action="index.php">
                         <div class="form-group row">
-                            <label class="col-2 col-form-label" for="status"><?php echo c_signupnow ?></label>
+                            <label class="col-2 col-form-label" for="status"><?php echo c_status ?></label>
                             <div class="col-10">
                                 <select class="form-control" name="status" id="status">
-                                    <option value="available" <?=$driver['status']=='available' ? 'selected' : ''?>>Available</option>
-                                    <option value="unavailable" <?=$driver['status']=='unavailable' ? 'selected' : ''?>>Unavailable</option>
-                                    <option value="busy" <?=$driver['status']=='busy' ? 'selected' : ''?> disabled>Busy</option>
+                                    <option value="available" <?=$driver['status']=='available' ? 'selected' : ''?>><?php echo c_available ?></option>
+                                    <option value="unavailable" <?=$driver['status']=='unavailable' ? 'selected' : ''?>><?php echo c_unavailable ?></option>
+                                    <option value="busy" <?=$driver['status']=='busy' ? 'selected' : ''?> disabled><?php echo c_busy ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-2 col-form-label" for="zone">Zone:</label>
+                            <label class="col-2 col-form-label" for="zone"><?php echo c_zone ?></label>
                             <div class="col-10">
-                                <input type="text" class="form-control" id="zone" name="zone" placeholder="Enter zone" value="<?=$driver['covered_zone']?>" required>
+                                <input type="text" class="form-control" id="zone" name="zone" placeholder="<?php echo c_enterZone ?>" value="<?=$driver['covered_zone']?>" required>
                             </div>
                         </div>
                         <div class="row">
@@ -121,26 +121,26 @@ if(mysqli_num_rows($res) > 0){
                             </div>
                         </div>
                         
-                        <button type="submit" name="submit_status" class="btn btn-primary btn-block">Update Status</button>
+                        <button type="submit" name="submit_status" class="btn btn-primary btn-block"><?php echo c_updateStatus ?></button>
                     </form>
                     <?php if(isset($request)):?>
-                    <h3 class="mt-5">Current Request:</h3>
+                    <h3 class="mt-5"><?php echo c_currentRequest ?></h3>
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td><b>From:</b></td>
+                                <td><b><?php echo c_from ?></b></td>
                                 <td><?=$request['resturant_name']?></td>
                             </tr>
                             <tr>
-                                <td><b>To:</b></td>
+                                <td><b><?php echo c_to ?></b></td>
                                 <td><?=$request['charity_name']?></td>
                             </tr>
                             <tr>
-                                <td><b>Number:</b></td>
+                                <td><b><?php echo c_number ?></b></td>
                                 <td><?=$request['number']?></td>
                             </tr>
                             <tr>
-                                <td colspan="2"><a href="index.php?delivered_id=<?=$request['id']?>" class="btn btn-success btn-block text-white">Delivered</a></td>
+                                <td colspan="2"><a href="index.php?delivered_id=<?=$request['id']?>" class="btn btn-success btn-block text-white"><?php echo c_delivered ?></a></td>
                             </tr>
                         </tbody>
                     </table>

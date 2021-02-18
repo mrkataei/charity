@@ -88,7 +88,7 @@ if (mysqli_num_rows($res) > 0) {
                 <label for="role"><?php echo c_selectRole ?>*</label>
                 <select name="role" id="role" class="custom-select" required>
                     <option value="charity"><?php echo c_charity ?></option>
-                    <option value="resturant"><?php echo c_resturant ?></option>
+                    <option value="resturant"><?php echo c_restaurant ?></option>
                     <option value="driver"><?php echo c_driver ?></option>
                 </select>
             </div>

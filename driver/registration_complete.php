@@ -47,7 +47,8 @@ if(isset($_POST['submit'])){
 ?>
 <div class="container">
     <div class="w-50 mx-auto card card-body">
-        <h1 class="card-title">Registration Complete</h1>
+
+        <h1 class="card-title"><?php echo c_registrationComplete ?></h1>
         <?php
         foreach($errors as $err){ ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -60,42 +61,42 @@ if(isset($_POST['submit'])){
         ?>
         <form method="POST" action="registration_complete.php">
             <div class="form-group">
-                <label for="fname">First Name:</label>
-                <input type="text" class="form-control" name="fname" id="fname" placeholder="Enter first name">
+                <label for="fname"><?php echo c_firstName ?></label>
+                <input type="text" class="form-control" name="fname" id="fname" placeholder="<?php echo c_enterFirstName ?>">
             </div>
             <div class="form-group">
-                <label for="lname">Last Name:</label>
-                <input type="text" class="form-control" name="lname" id="lname" placeholder="Enter last name">
+                <label for="lname"><?php echo c_lastName ?></label>
+                <input type="text" class="form-control" name="lname" id="lname" placeholder="<?php echo c_enterLastName ?>">
             </div>
             <div class="form-group">
-                <label for="id">National ID*:</label>
-                <input type="number" class="form-control" name="id" id="id" placeholder="Enter national ID" required>
+                <label for="id"><?php echo c_nationalID ?></label>
+                <input type="number" class="form-control" name="id" id="id" placeholder="<?php echo c_enterNationalID ?>" required>
             </div>
             <div class="form-group">
-                <label for="zone">Covered Area*:</label>
-                <input type="text" class="form-control" name="zone" id="zone" placeholder="Enter covered area" required>
+                <label for="zone"><?php echo c_zone ?></label>
+                <input type="text" class="form-control" name="zone" id="zone" placeholder="<?php echo c_enterZone ?>" required>
             </div>
             <div class="form-group">
-                <label for="birthday">Birthday*:</label>
-                <input type="text" class="form-control" name="birthday" id="birthday" placeholder="Enter your full birthday" required>
+                <label for="birthday"><?php echo c_birthday ?></label>
+                <input type="text" class="form-control" name="birthday" id="birthday" placeholder="<?php echo c_enterYourFullBirthday ?>" required>
             </div>
             <div class="form-group">
-                <label for="plate">Car Plate*:</label>
-                <input type="text" class="form-control" name="plate" id="plate" placeholder="Enter full car's plate" required>
+                <label for="plate"><?php echo c_carPlate ?></label>
+                <input type="text" class="form-control" name="plate" id="plate" placeholder="<?php echo c_enterFullCarsPlate ?>" required>
             </div>
             <div class="form-group">
-                <label for="color">Car Color*:</label>
-                <input type="text" class="form-control" name="color" id="color" placeholder="Enter full car's color" required>
+                <label for="color"><?php echo c_carColor ?></label>
+                <input type="text" class="form-control" name="color" id="color" placeholder="<?php echo c_enterFullCarsColor ?>" required>
             </div>
             <div class="form-group">
                 <label for="lat">Lat:</label>
-                <input type="number" class="form-control" name="lat" id="lat" placeholder="Enter Lat">
+                <input type="number" class="form-control" name="lat" id="lat" placeholder="<?php echo c_enterLat ?>">
             </div>
             <div class="form-group">
                 <label for="long">Long:</label>
-                <input type="number" class="form-control" name="long" id="long" placeholder="Enter Long">
+                <input type="number" class="form-control" name="long" id="long" placeholder="<?php echo c_enterLong ?>">
             </div>
-            <button type="submit" name="submit" class="btn btn-primary btn-block">Complete Registration</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-block"><?php echo c_registrationComplete ?></button>
         </form>
     </div>
 </div>

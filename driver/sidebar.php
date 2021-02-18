@@ -1,4 +1,4 @@
-Welcome, <b><?=$driver['first_name'].' '.$driver['last_name']; ?></b>.
+<?php echo c_welcome ?>, <b><?=$driver['first_name'].' '.$driver['last_name']; ?></b>.
 <hr>
 <ul class="nav flex-column">
     <li class="nav-item">

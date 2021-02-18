@@ -4,7 +4,6 @@ require_once('../load.php');
 get_header();
 $conn = db_conn();
 $errors = [];
-//kourosh
 redirect_user();
 
 if(isset($_POST['submit'])){

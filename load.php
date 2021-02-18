@@ -1,6 +1,8 @@
 <?php
 session_start();
 date_default_timezone_set("Asia/Tehran");
+$_SESSION['lang'] = $_POST['main_language'] ?? $_SESSION['lang'];
+define("lang" , $_SESSION['lang']);
 require_once("inc/db.php");
 require_once('functions.php');
 require_once('definitions.php');

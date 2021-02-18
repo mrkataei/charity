@@ -1,0 +1,19 @@
+html, body{
+    background: #eee;
+}
+
+#main{
+}
+.dashboard{
+    background-color: #fff;
+    box-shadow: -10px 10px 25px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    margin: 25px auto;
+    padding: 50px 30px;
+    .sidebar{
+        border-right: 1px solid #eee;
+    }
+    .mainbar{
+
+    }
+}

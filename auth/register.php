@@ -17,17 +17,17 @@ if(isset($_POST['submit'])){
     $sql = 'SELECT username from users WHERE username="'.$username.'" LIMIT 1';
     $res = mysqli_query($conn, $sql);
     if(mysqli_num_rows($res) > 0)
-        $errors[] = "Username exists. choose another one.";
+        $errors[] = c_Username_exists;
     if($password != $password2)
-        $errors[] = "Passwords not match.";
+        $errors[] = c_Passwords_not_match;
     if (strlen($password) < 8) {
-        $errors[] = "Password too short!";
+        $errors[] = c_PasswordTooShort;
     }
     if (!preg_match("#[0-9]+#", $password)) {
-        $errors[] = "Password must include at least one number!";
+        $errors[] = c_PasswordMustIncludeNum;
     }
     if (!preg_match("#[a-zA-Z]+#", $password)) {
-        $errors[] = "Password must include at least one letter!";
+        $errors[] = c_PasswordMustIncludeLetter;
     }
     if( !$errors ){
         $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -60,7 +60,7 @@ if (mysqli_num_rows($res) > 0) {
 
 <div class="container">
     <div class="w-50 mx-auto card card-body my-5">
-        <h1 class="card-title">Sign Up</h1>
+        <h1 class="card-title"><?php echo c_signup ?></h1>
         <?php
         foreach($errors as $err){ ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -73,38 +73,40 @@ if (mysqli_num_rows($res) > 0) {
         ?>
         <form method="POST" action="register.php">
             <div class="form-group">
-                <label for="username">Username*:</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+                <label for="username"><?php echo c_username?>*</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="<?php echo c_enterUsername ?>" required>
             </div>
             <div class="form-group">
-                <label for="pass">Password*:</label>
-                <input type="password" class="form-control" id="pass" name="password" placeholder="Enter Password" required>
+                <label for="pass"><?php echo c_password ?>*</label>
+                <input type="password" class="form-control" id="pass" name="password" placeholder="<?php echo c_enterPassword ?>" required>
             </div>
             <div class="form-group">
-                <label for="pass2">Password Confirmation*:</label>
-                <input type="password" class="form-control" id="pass2" name="password2" placeholder="Enter Password Confirmation" required>
+                <label for="pass2"><?php echo c_passwordConfiguration ?>*</label>
+                <input type="password" class="form-control" id="pass2" name="password2" placeholder="<?php echo c_enterPasswordConfiguration ?>" required>
             </div>
             <div class="form-group">
-                <label for="role">Select Role*:</label>
+                <label for="role"><?php echo c_selectRole ?>*</label>
                 <select name="role" id="role" class="custom-select" required>
-                    <option value="charity">Charity</option>
-                    <option value="resturant">Resturant</option>
-                    <option value="driver">Driver</option>
+                    <option value="charity"><?php echo c_charity ?></option>
+                    <option value="resturant"><?php echo c_resturant ?></option>
+                    <option value="driver"><?php echo c_driver ?></option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="ques">Security Question:</label>
+                <label for="ques"><?php echo c_securityQuestion ?></label>
                 <select name="question" id="ques" class="custom-select" required>
                     <?=$SELECT_questions?>
                 </select>
+
+
             </div>
             <div class="form-group">
-                <label for="answ">Answer:</label>
-                <input type="text" name="answer" class="form-control" id="answ" placeholder="Enter Question Answer" required>
+                <label for="answ"><?php echo c_answer ?></label>
+                <input type="text" name="answer" class="form-control" id="answ" placeholder="<?php echo c_enterQuestionAswer ?>" required>
             </div>
-            <button type="submit" name="submit" class="btn btn-primary btn-block">Sign Up</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-block"><?php echo c_signup ?></button>
             <div class="mt-2">
-                Already have account? <a href="login.php">Login.</a>
+                <?php echo c_alreadyHaveAcount ?><a href="login.php"><?php echo c_login ?></a>
             </div>
         </form>
     </div>

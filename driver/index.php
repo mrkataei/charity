@@ -87,7 +87,7 @@ if(mysqli_num_rows($res) > 0){
                     <h3>Change status, location and zone:</h3>
                     <form class="mt-4" method="POST" action="index.php">
                         <div class="form-group row">
-                            <label class="col-2 col-form-label" for="status">Status:</label>
+                            <label class="col-2 col-form-label" for="status"><?php echo c_signupnow ?></label>
                             <div class="col-10">
                                 <select class="form-control" name="status" id="status">
                                     <option value="available" <?=$driver['status']=='available' ? 'selected' : ''?>>Available</option>

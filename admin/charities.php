@@ -94,4 +94,3 @@ $needful_charity3 = mysqli_fetch_array($res);
 <?php
 get_footer();
 ?>
-#test

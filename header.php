@@ -6,6 +6,7 @@
     <title><?php echo c_projectName ?></title>
     <link rel="stylesheet" href="<?=STATIC_ROOT ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=STATIC_ROOT ?>/css/styles.css">
+    <link rel="shortcut icon" href="<?=STATIC_ROOT ?>/images/charity.png" type="image/png">
     <nav class="w-100 bg-white px-5 mb-5" style="border-radius:5px; box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);">
         <form method="post" style="display:flex;align-items:center">
             <select id="main_language" name ="main_language" class="btn btn-primary py-2 px-2 my-1" onchange="this.form.submit();">

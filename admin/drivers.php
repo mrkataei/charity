@@ -53,21 +53,21 @@ if($res)
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Drivers
+                        <?php echo c_drivers ?>
                     </h1>
                     <hr/>
                     <?php
                     if(isset($activest_driver)){
-                        echo 'Today activest driver: <b>'.$activest_driver['driver_name'].'</b> - '.$activest_driver['national_id'].': '.$activest_driver['counts'].' times.';
+                        echo c_TodayActivestDriver .$activest_driver['driver_name'].'</b> - '.$activest_driver['national_id'].': '.$activest_driver['counts'].' times.';
                     }
                     ?>
                     <?php if(isset($best_drivers)):?>
-                        <h5 class="mt-4">Drivers rate > 5:</h5>
+                        <h5 class="mt-4"><?php echo c_DriversRate ?></h5>
                         <table class="table">
                             <tr>
-                                <th>Driver</th>
-                                <th>National ID</th>
-                                <th>Rate Average</th>
+                                <th><?php echo c_driver ?></th>
+                                <th><?php echo c_NationalIDriver ?></th>
+                                <th><?php echo c_RateAverage ?></th>
                             </tr>
                             <?php foreach($best_drivers as $item){?>
                                 <tr>
@@ -81,13 +81,13 @@ if($res)
                     <?php endif; ?>
 
                     <?php if(isset($min_max_drivers)):?>
-                        <h5 class="mt-4">Min-Max Rating:</h5>
+                        <h5 class="mt-4"><?php echo c_Min_MAX ?></h5>
                         <table class="table">
                             <tr>
-                                <th>Driver</th>
-                                <th>National ID</th>
-                                <th>Min Rate</th>
-                                <th>Max Rate</th>
+                                <th><?php echo c_driver ?></th>
+                                <th><?php echo c_NationalIDriver ?></th>
+                                <th><?php echo c_MinRate ?></th>
+                                <th><?php echo c_MaxRate ?></th>
                             </tr>
                             <?php foreach($min_max_drivers as $item){?>
                                 <tr>

@@ -97,7 +97,7 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        New Request
+                        <?php echo c_NewRequest ?>
                     </h1>
                     <hr/>
                     <?php
@@ -115,11 +115,11 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
                             <?=$$submit_request_msg?>
                         </div>
                     <?php } ?>
-                    <h3>Add New Request:</h3>
+                    <h3><?php echo c_AddNewRequest ?></h3>
                     <form class="form-inline mt-3" method="POST" action="new_request.php">
                         <div class="form-group mb-2">
                             <select name="charity" class="form-control" required>
-                                <option value="" selected hidden>Charity</option>
+                                <option value="" selected hidden><?php echo c_charity ?></option>
                                 <?php
                                     foreach($charities as $ch){
                                         echo '<option value="'.$ch['username'].'">'.$ch['name'].' - '.$ch['daily_food_count'].'</option>';
@@ -129,7 +129,7 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
                         </div>
                         <div class="form-group mb-2 ml-3">
                             <select name="food" class="form-control" required>
-                                <option value="" selected hidden>Food</option>
+                                <option value="" selected hidden><?php echo c_Food ?></option>
                                 <?php
                                     foreach($foods as $food){
                                         echo '<option value="'.$food['id'].'">'.$food['name'].'</option>';
@@ -138,12 +138,12 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
                             </select>
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
-                            <input name="number" type="number" value="10" class="form-control" id="number" placeholder="Number">
+                            <input name="number" type="number" value="10" class="form-control" id="number" placeholder="<?php echo c_Number ?>">
                         </div>                    
-                        <button name="add_request_submit" type="submit" class="btn btn-primary ml-3 mb-2">Submit</button>
+                        <button name="add_request_submit" type="submit" class="btn btn-primary ml-3 mb-2"><?php echo c_Submit ?></button>
                     </form>
 
-                    <h3>All Requests:</h3>
+                    <h3><?php echo c_AllRequests ?></h3>
                     <?php
                     if(isset($delete_charity_msg)){?>
                         <div class="alert alert-danger" role="alert">
@@ -154,12 +154,12 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Charity</th>
-                                <th>Food</th>
-                                <th>Number</th>
-                                <th>Time</th>
-                                <th>Driver</th>
-                                <th>Rate</th>
+                                <th><?php echo c_charity ?></th>
+                                <th><?php echo c_Food ?></th>
+                                <th><?php echo c_Number ?></th>
+                                <th><?php echo c_Time ?></th>
+                                <th><?php echo c_driver ?></th>
+                                <th><?php echo c_Rate ?></th>
                             </tr>
                         </thead>
                         <tbody>

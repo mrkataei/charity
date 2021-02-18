@@ -31,19 +31,19 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Admin Dashboard
+                        <?php echo c_AdminDashboard ?>
                     </h1>
                     <hr/>
-                    <h3 class="mt-3">Today Top Requests:</h3>
+                    <h3 class="mt-3"> <?php echo c_TodayTopRequests ?></h3>
                     <?php if($requests): ?>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Resturant</th>
-                                <th>Charity</th>
-                                <th>Driver</th>
-                                <th>Rate</th>
+                                <th><?php echo c_restaurant ?></th>
+                                <th><?php echo c_charity ?></th>
+                                <th><?php echo c_driver ?></th>
+                                <th><?php echo c_Rate ?></th>
                             </tr>
                         </thead>
                         <tbody>

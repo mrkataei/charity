@@ -30,10 +30,10 @@ $resturants = mysqli_fetch_all($res, MYSQLI_ASSOC);
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Resturants
+                        <?php echo c_restaurants ?>
                     </h1>
                     <hr/>
-                    <h3>Contracted with your contracted charities:</h3>
+                    <h3><?php echo c_ContractedWithYourContractedCharities ?></h3>
                     <?php if($resturants): ?>
                     <table class="table">
                         <thead>

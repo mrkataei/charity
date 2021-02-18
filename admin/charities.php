@@ -51,31 +51,31 @@ $needful_charity3 = mysqli_fetch_array($res);
             <div class="col-9">
                 <div class="mainbar">
                     <h1>
-                        Charities
+                        <?php echo c_charities ?>
                     </h1>
                     <hr/>
                     
                     <p class="my-2">
-                        <b>Needful Charity by covered people:</b>
-                        <span><?=$needful_charity['name'];?> - <?=$needful_charity['people_covered'];?> persons.</span>
+                        <b><?php echo c_NeedfulCharityByCoveredPeople ?></b>
+                        <span><?=$needful_charity['name'];?> - <?=$needful_charity['people_covered'];?> <?php echo c_persons ?></span>
                     </p>
 
                     <p class="my-2">
-                        <b>Needful Charity by recieved foods:</b>
-                        <span><?=$needful_charity2['name'];?> - <?=$needful_charity2['sum'];?> foods.</span>
+                        <b><?php echo c_NeedfulCharityByRecievedFoods ?></b>
+                        <span><?=$needful_charity2['name'];?> - <?=$needful_charity2['sum'];?><?php echo c_foods ?></span>
                     </p>
 
                     <p class="my-2">
-                        <b>Needful Charity by contracted resturants:</b>
-                        <span><?=$needful_charity3['name'];?> - <?=$needful_charity3['count'];?> resturant.</span>
+                        <b><?php echo c_NeedfulCharityByContractedResturants ?></b>
+                        <span><?=$needful_charity3['name'];?> - <?=$needful_charity3['count'];?> <?php echo c_resturant ?></span>
                     </p>
 
-                    <h5 class="mt-4">Average daily food number by zone:</h5>
+                    <h5 class="mt-4"><?php echo c_AverageDailyFoodNumberByZone ?></h5>
                     <?php if($charities_by_zone):?>
                         <table class="table mt-3">
                             <tr>
-                                <th>Zone</th>
-                                <th>Needed Food Number</th>
+                                <th><?php echo c_zone ?></th>
+                                <th><?php echo c_NeededFoodNumber ?></th>
                             </tr>
                             <?php foreach($charities_by_zone as $item){?>
                                 <tr>

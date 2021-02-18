@@ -7,3 +7,4 @@ define('STATIC_ROOT', 'http://localhost/charity/static');
 define('ROOT_URL', 'http://localhost/charity');
 define('LOGIN_URL', ROOT_URL.'/auth/login.php');
 ?>
+#salam

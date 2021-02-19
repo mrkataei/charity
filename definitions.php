@@ -137,6 +137,7 @@ if(lang=="EN") {
     define("c_TodayActivestDriver" , "Today activest driver:");
 
     define("c_projectName" , "Charity");
+    define("c_welcomeMessage" , "Welcome to food donate system");
 
 
 
@@ -277,6 +278,7 @@ else
     define("c_TodayActivestDriver" , "فعالیت امروز رانندگان");
     define("language" , "زبان");
     define("c_projectName" , "خیریه");
+    define("c_welcomeMessage" , "به سامانه اهدا غذا خوش آمدید");
 
 
 

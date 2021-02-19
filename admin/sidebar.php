@@ -1,4 +1,4 @@
-<?php echo c_welcome ?>, <b>Admin</b>.
+<?php echo c_welcome ?>, <b><?php $admin['username']?></b>.
 <hr>
 <ul class="nav flex-column">
     <li class="nav-item">

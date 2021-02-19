@@ -11,8 +11,8 @@ html, body {
     background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     -webkit-box-shadow: -10px 10px 25px rgba(0, 0, 0, 0.1);
-    box-shadow: -20px 10px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    box-shadow: -20px 20px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
     margin: 25px auto;
     padding: 50px 30px;
 }
@@ -115,6 +115,7 @@ html, body {
 }
 .welcome{
     border-radius: 15px;
+    background: transparent;
 }
 #redirect {
     background: #00B4DB;  /* fallback for old browsers */
@@ -131,6 +132,15 @@ html, body {
 .btn-change:hover {
     -webkit-transform: scale(1.1);
     background: #31708f;
+}
+.btn-change8{
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition-duration: 0.6s;
+    -webkit-transition-timing-function: linear;
+    box-shadow:0px 0 0 #31708f  inset;
+}
+.btn-change8:hover{
+    -webkit-box-shadow: -110px 0 0 #31708f inset;
 }
 @keyframes spin {
     0%      {

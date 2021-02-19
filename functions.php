@@ -38,7 +38,7 @@ function is_user(){
 function is_admin(){
     if(is_user())
      if($_SESSION['USER_ROLE']=='admin') return;
-    //redirect(LOGIN_URL);
+    redirect(LOGIN_URL);
 }
 function is_charity(){
     if(is_user())

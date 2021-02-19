@@ -5,9 +5,7 @@ get_header();
 is_resturant();
 $resturant = get_resturant();
 
-$sql = '
-
-'
+$sql = ''
 ?>
 
 <div class="container">

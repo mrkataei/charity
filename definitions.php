@@ -139,6 +139,24 @@ if(lang=="EN") {
     define("c_projectName" , "Charity");
     define("c_welcomeMessage" , "Welcome to food donate system");
 
+    define("c_DriverRateSubmitted" , "Driver rate submitted");
+    define("c_NumberUpdated" , "Number updated.");
+    define("c_pending" , "pending");
+
+    define("c_about" , "The Charity is a free food distribution system in which restaurants serve some extra food at the end of each day.
+            They are sent to charities by volunteer drivers. In this system, a number of charities, restaurants and drivers can
+            Register.");
+    define("c_successEmailSend" , "Your contact information is received successfully.");
+    define("c_nameEmail" , "Your name");
+    define("c_Email" , "Email address");
+    define("c_YourEmail" , "Your Email");
+    define("c_EmailMessage" , "Message");
+    define("c_YourMessage" , "enter your message here!");
+    define("c_WeNever" , "We'll never share your email with anyone else.");
+    define("c_send" , "Send");
+    define("c_EmailName", "Name");
+    define("c_Contact" , "Contact Us");
+
 
 
 
@@ -279,6 +297,22 @@ else
     define("language" , "زبان");
     define("c_projectName" , "خیریه");
     define("c_welcomeMessage" , "به سامانه اهدا غذا خوش آمدید");
+    define("c_DriverRateSubmitted" , "امتیاز راننده ثبت شد.");
+    define("c_NumberUpdated" , "تعداد غذا ها بروزرسانی شد !");
+    define("c_pending" , "انتظار");
+    define("c_about" , " خیریه مربوط به يك سيستم توزيع رايگان غذاست كه در آن رستوران ها در پايان هر روز تعدادي غذاي اضافي را
+توسط رانندگان داوطلب به خيريه ها ارسال ميكنند.در اين سيستم تعدادي خيريه،رستوران،راننده مي توانند                        
+ثبت نام كنند.                       ");
+    define("c_successEmailSend" , "بازخورد شما با موفقیت به ادمین ایمیل شد!");
+    define("c_nameEmail" , "نام شما");
+    define("c_Email" , "ایمیل");
+    define("c_YourEmail" , "ایمیل شما");
+    define("c_EmailMessage" , "پیام");
+    define("c_YourMessage" , "پیام خود را وارد کنید!");
+    define("c_WeNever" , "ماهرگز ایمیل شما را در اختیار کسی نمیگذاریم!");
+    define("c_send" , "ارسال");
+    define("c_EmailName", "اسم");
+    define("c_Contact" , "ارتباط با ما");
 
 
 

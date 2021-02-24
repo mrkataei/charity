@@ -1,14 +1,7 @@
 <?php
 require_once('load.php');
 get_header();
-get_footer();
 ?>
-<html>
-<header>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="static/js/main.js"></script>
-    <link rel="stylesheet" href="static/css/main.css">
-</header>
 <body class="demo">
 <div id="demo-content">
     <div id="loader-wrapper">
@@ -23,7 +16,8 @@ get_footer();
         </div>
     </div>
 </div>
-
 </body>
-</html>
+<?php
+//get_footer();
+//?>
 

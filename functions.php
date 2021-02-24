@@ -97,4 +97,24 @@ function get_driver(){
         return mysqli_fetch_array($res);
     }
 }
+function get_date($item){
+    if ($_SESSION['lang']=="EN"){
+        return date('Y/n/d D g:i a', $item['timestamp']);
+    }
+    else
+        return mds_date("l j F Y a, i : h", $item['timestamp'], 0);
+}
+function send_mail(){
+    if(!empty($_POST["userName"])) {
+        $name = $_POST["userName"];
+        $email = $_POST["userEmail"];
+        $toEmail = "kouroshinfo96@gmail.com";
+        $mailHeaders = "From: " . $name . "<". $email .">\r\n";
+        $content = $_POST["message"].'</br>'.$mailHeaders;
+        if(mail($toEmail, $name, $content, $mailHeaders)) {
+            return $type = "success";
+        }
+    }
+}
+
 ?>

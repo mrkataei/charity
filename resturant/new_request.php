@@ -173,7 +173,7 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
                                         <td>'.$item['charity_name'].'</td>
                                         <td>'.$item['food_name'].'</td>
                                         <td>'.$item['number'].'</td>
-                                        <td>'.date('Y/n/d g:i:s a', $item['timestamp']).'</td>
+                                        <td>'.get_date($item).'</td>
                                         <td>'.($item['driver_name'] ? $item['driver_name'] : '<i class="small text-muted">Not available</i>').'</td>
                                         <td>'.($item['rate'] ? $item['rate'].'/5' : '').'</td>
                                     </tr>

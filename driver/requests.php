@@ -18,6 +18,7 @@ $sql = 'SELECT
     ';
 $res = mysqli_query($conn, $sql);
 $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
+$date="";
 
 ?>
 
@@ -49,13 +50,14 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
                             <?php
                             $i = 0;
                             foreach($requests as $item){
-                            $i++;    
+                                $i++;
                             ?>
                                 <tr>
                                     <td><?=$i?></td>
                                     <td><?=$item['resturant_name'];?></td>
                                     <td><?=$item['charity_name'];?></td>
-                                    <td><?=date('Y/n/d g:i:s a', $item['timestamp'])?></td>
+                                    <td><?=get_date($item)?></td>
+                                    <td></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -66,7 +68,7 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
         </div>
     </div>
 </div>
-
 <?php
 get_footer();
 ?>
+

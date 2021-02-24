@@ -10,7 +10,7 @@ if(isset($_POST['submit_number'])){
     $sql = 'UPDATE charity SET daily_food_count="'.$number.'" WHERE username="'.$charity['username'].'"';
     $res = mysqli_query($conn, $sql);
     if($res){
-        $submit_number_msg = 'Number updated.';
+        $submit_number_msg = c_DriverRateSubmitted;
         $charity = get_charity();
     }
 }
@@ -21,7 +21,7 @@ if(isset($_POST['submit_request_id'])){
     $sql = 'UPDATE send_request SET rate="'.$rate.'" WHERE id="'.$id.'"';
     $res = mysqli_query($conn, $sql);
     if($res)
-        $submit_rate_msg = 'Driver rate submitted: '.$rate.'/5';
+        $submit_rate_msg = c_DriverRateSubmitted.$rate.'/5';
 }
 
 $sql = 'SELECT resturant.name as resturant_name, food.name as food_name, number, CONCAT(driver.first_name, " ", driver.last_name) as driver_name, done, rate, send_request.id
@@ -100,7 +100,7 @@ $request = mysqli_fetch_all($res, MYSQLI_ASSOC)
                                     <td>
                                         <?php
                                             if($item['rate']) echo $item['rate'].'/5';
-                                            elseif($item['done']==0) echo 'pending';
+                                            elseif($item['done']==0) echo c_pending;
                                             else{?>
                                                 <form action="index.php" method="POST">
                                                     <input type="number" name="rate" max="5" min="1" value="5"/>

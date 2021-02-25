@@ -37,21 +37,21 @@ $date="";
                     </h1>
                     <hr/>
                     <?php if($requests): ?>
-                    <table class="table">
-                        <thead>
+                        <table class="table">
+                            <thead>
                             <tr>
                                 <th>#</th>
                                 <th><?php echo c_from ?></th>
                                 <th><?php echo c_to ?></th>
                                 <th><?php echo c_Date ?></th>
                             </tr>
-                        </thead>
-                        <tbody>
+                            </thead>
+                            <tbody>
                             <?php
                             $i = 0;
                             foreach($requests as $item){
                                 $i++;
-                            ?>
+                                ?>
                                 <tr>
                                     <td><?=$i?></td>
                                     <td><?=$item['resturant_name'];?></td>
@@ -60,8 +60,8 @@ $date="";
                                     <td></td>
                                 </tr>
                             <?php } ?>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
                     <?php endif; ?>
                 </div>
             </div>

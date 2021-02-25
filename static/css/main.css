@@ -1,3 +1,8 @@
+@font-face {
+    font-family:'shabnam';
+    src: url('/static/fonts/Shabnam.ttf');
+}
+
 html, body {
     /*background: #00F260;  !* fallback for old browsers *!*/
 
@@ -145,7 +150,9 @@ html, body {
     float: left;
 }
 /*footer*/
+
 .footer-dark {
+
     padding:50px 0;
     color:black;
     background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

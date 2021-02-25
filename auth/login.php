@@ -14,12 +14,12 @@ if(isset($_POST['submit'])){
     switch($log){
         case -1:
             $errors[] = c_passwordIncorrect;
-        break;
+            break;
         case -2:
             $errors[] = c_usernameDoesntExist;
-        break;
+            break;
     }
-    
+
 }
 
 ?>
@@ -35,11 +35,11 @@ if(isset($_POST['submit'])){
                     <span aria-hidden="true">&times</span>
                 </button>
             </div>
-        <?php
+            <?php
         }
         foreach($errors as $err){ ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <?=$err?>
+                <?=$err?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -63,9 +63,9 @@ if(isset($_POST['submit'])){
                 <div class="col-6 text-right">
                     <a href="reset_password.php"><?php echo c_resetPassword ?></a>
                 </div>
-                
+
             </div>
-            
+
         </form>
     </div>
 </div>

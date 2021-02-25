@@ -54,7 +54,7 @@ $needful_charity3 = mysqli_fetch_array($res);
                         <?php echo c_charities ?>
                     </h1>
                     <hr/>
-                    
+
                     <p class="my-2">
                         <b><?php echo c_NeedfulCharityByCoveredPeople ?></b>
                         <span><?=$needful_charity['name'];?> - <?=$needful_charity['people_covered'];?> <?php echo c_persons ?></span>

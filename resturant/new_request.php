@@ -41,7 +41,7 @@ if(isset($_POST['add_request_submit'])){
         else{
             $sql .= ', null)';
         }
-            
+
         $res = mysqli_query($conn, $sql);
 
         $sql2 = 'UPDATE charity SET daily_food_count = "'.($charity_obj['daily_food_count']-$number).'" WHERE username = "'.$charity.'"';
@@ -60,7 +60,7 @@ if(isset($_POST['add_request_submit'])){
         }
     }
 
-    
+
 }
 
 $sql = 'SELECT * from resturant_charity, charity 
@@ -86,72 +86,72 @@ $res = mysqli_query($conn, $sql);
 $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
 ?>
 
-<div class="container">
-    <div class="dashboard">
-        <div class="row">
-            <div class="col-3">
-                <div class="sidebar">
-                    <?php include_once('sidebar.php'); ?>
+    <div class="container">
+        <div class="dashboard">
+            <div class="row">
+                <div class="col-3">
+                    <div class="sidebar">
+                        <?php include_once('sidebar.php'); ?>
+                    </div>
                 </div>
-            </div>
-            <div class="col-9">
-                <div class="mainbar">
-                    <h1>
-                        <?php echo c_NewRequest ?>
-                    </h1>
-                    <hr/>
-                    <?php
-                    foreach($errors as $err){ ?>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <?=$err?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php 
-                    }
-                    if(isset($$submit_request_msg)){?>
-                        <div class="alert alert-success" role="alert">
-                            <?=$$submit_request_msg?>
-                        </div>
-                    <?php } ?>
-                    <h3><?php echo c_AddNewRequest ?></h3>
-                    <form class="form-inline mt-3" method="POST" action="new_request.php">
-                        <div class="form-group mb-2">
-                            <select name="charity" class="form-control" required>
-                                <option value="" selected hidden><?php echo c_charity ?></option>
-                                <?php
+                <div class="col-9">
+                    <div class="mainbar">
+                        <h1>
+                            <?php echo c_NewRequest ?>
+                        </h1>
+                        <hr/>
+                        <?php
+                        foreach($errors as $err){ ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?=$err?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <?php
+                        }
+                        if(isset($$submit_request_msg)){?>
+                            <div class="alert alert-success" role="alert">
+                                <?=$$submit_request_msg?>
+                            </div>
+                        <?php } ?>
+                        <h3><?php echo c_AddNewRequest ?></h3>
+                        <form class="form-inline mt-3" method="POST" action="new_request.php">
+                            <div class="form-group mb-2">
+                                <select name="charity" class="form-control" required>
+                                    <option value="" selected hidden><?php echo c_charity ?></option>
+                                    <?php
                                     foreach($charities as $ch){
                                         echo '<option value="'.$ch['username'].'">'.$ch['name'].' - '.$ch['daily_food_count'].'</option>';
                                     }
-                                ?>
-                            </select>
-                        </div>
-                        <div class="form-group mb-2 ml-3">
-                            <select name="food" class="form-control" required>
-                                <option value="" selected hidden><?php echo c_Food ?></option>
-                                <?php
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group mb-2 ml-3">
+                                <select name="food" class="form-control" required>
+                                    <option value="" selected hidden><?php echo c_Food ?></option>
+                                    <?php
                                     foreach($foods as $food){
                                         echo '<option value="'.$food['id'].'">'.$food['name'].'</option>';
                                     }
-                                ?>
-                            </select>
-                        </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input name="number" type="number" value="10" class="form-control" id="number" placeholder="<?php echo c_Number ?>">
-                        </div>                    
-                        <button name="add_request_submit" type="submit" class="btn btn-primary ml-3 mb-2"><?php echo c_Submit ?></button>
-                    </form>
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                                <input name="number" type="number" value="10" class="form-control" id="number" placeholder="<?php echo c_Number ?>">
+                            </div>
+                            <button name="add_request_submit" type="submit" class="btn btn-primary ml-3 mb-2"><?php echo c_Submit ?></button>
+                        </form>
 
-                    <h3><?php echo c_AllRequests ?></h3>
-                    <?php
-                    if(isset($delete_charity_msg)){?>
-                        <div class="alert alert-danger" role="alert">
-                            <?=$delete_charity_msg?>
-                        </div>
-                    <?php } ?>
-                    <table class="table">
-                        <thead>
+                        <h3><?php echo c_AllRequests ?></h3>
+                        <?php
+                        if(isset($delete_charity_msg)){?>
+                            <div class="alert alert-danger" role="alert">
+                                <?=$delete_charity_msg?>
+                            </div>
+                        <?php } ?>
+                        <table class="table">
+                            <thead>
                             <tr>
                                 <th>#</th>
                                 <th><?php echo c_charity ?></th>
@@ -161,9 +161,9 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
                                 <th><?php echo c_driver ?></th>
                                 <th><?php echo c_Rate ?></th>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
+                            </thead>
+                            <tbody>
+                            <?php
                             $i = 0;
                             foreach($requests as $item){
                                 $i++;
@@ -180,13 +180,13 @@ $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
                                 ';
                             }
                             ?>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <?php
 get_footer();

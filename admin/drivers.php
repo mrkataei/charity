@@ -42,69 +42,69 @@ if($res)
     $activest_driver = mysqli_fetch_array($res);
 ?>
 
-<div class="container">
-    <div class="dashboard">
-        <div class="row">
-            <div class="col-3">
-                <div class="sidebar">
-                    <?php include_once('sidebar.php'); ?>
+    <div class="container">
+        <div class="dashboard">
+            <div class="row">
+                <div class="col-3">
+                    <div class="sidebar">
+                        <?php include_once('sidebar.php'); ?>
+                    </div>
                 </div>
-            </div>
-            <div class="col-9">
-                <div class="mainbar">
-                    <h1>
-                        <?php echo c_drivers ?>
-                    </h1>
-                    <hr/>
-                    <?php
-                    if(isset($activest_driver)){
-                        echo c_TodayActivestDriver .$activest_driver['driver_name'].'</b> - '.$activest_driver['national_id'].': '.$activest_driver['counts'].' times.';
-                    }
-                    ?>
-                    <?php if(isset($best_drivers)):?>
-                        <h5 class="mt-4"><?php echo c_DriversRate ?></h5>
-                        <table class="table">
-                            <tr>
-                                <th><?php echo c_driver ?></th>
-                                <th><?php echo c_NationalIDriver ?></th>
-                                <th><?php echo c_RateAverage ?></th>
-                            </tr>
-                            <?php foreach($best_drivers as $item){?>
+                <div class="col-9">
+                    <div class="mainbar">
+                        <h1>
+                            <?php echo c_drivers ?>
+                        </h1>
+                        <hr/>
+                        <?php
+                        if(isset($activest_driver)){
+                            echo c_TodayActivestDriver .$activest_driver['driver_name'].'</b> - '.$activest_driver['national_id'].': '.$activest_driver['counts'].' times.';
+                        }
+                        ?>
+                        <?php if(isset($best_drivers)):?>
+                            <h5 class="mt-4"><?php echo c_DriversRate ?></h5>
+                            <table class="table">
                                 <tr>
-                                    <td><?=$item['driver_name'];?></td>
-                                    <td><?=$item['national_id'];?></td>
-                                    <td><?=$item['rate_avg'];?></td>
+                                    <th><?php echo c_driver ?></th>
+                                    <th><?php echo c_NationalIDriver ?></th>
+                                    <th><?php echo c_RateAverage ?></th>
                                 </tr>
-                            <?php } ?>
-                        </table>
+                                <?php foreach($best_drivers as $item){?>
+                                    <tr>
+                                        <td><?=$item['driver_name'];?></td>
+                                        <td><?=$item['national_id'];?></td>
+                                        <td><?=$item['rate_avg'];?></td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
 
-                    <?php endif; ?>
+                        <?php endif; ?>
 
-                    <?php if(isset($min_max_drivers)):?>
-                        <h5 class="mt-4"><?php echo c_Min_MAX ?></h5>
-                        <table class="table">
-                            <tr>
-                                <th><?php echo c_driver ?></th>
-                                <th><?php echo c_NationalIDriver ?></th>
-                                <th><?php echo c_MinRate ?></th>
-                                <th><?php echo c_MaxRate ?></th>
-                            </tr>
-                            <?php foreach($min_max_drivers as $item){?>
+                        <?php if(isset($min_max_drivers)):?>
+                            <h5 class="mt-4"><?php echo c_Min_MAX ?></h5>
+                            <table class="table">
                                 <tr>
-                                    <td><?=$item['driver_name'];?></td>
-                                    <td><?=$item['national_id'];?></td>
-                                    <td><?=$item['min_rate'];?></td>
-                                    <td><?=$item['max_rate'];?></td>
+                                    <th><?php echo c_driver ?></th>
+                                    <th><?php echo c_NationalIDriver ?></th>
+                                    <th><?php echo c_MinRate ?></th>
+                                    <th><?php echo c_MaxRate ?></th>
                                 </tr>
-                            <?php } ?>
-                        </table>
+                                <?php foreach($min_max_drivers as $item){?>
+                                    <tr>
+                                        <td><?=$item['driver_name'];?></td>
+                                        <td><?=$item['national_id'];?></td>
+                                        <td><?=$item['min_rate'];?></td>
+                                        <td><?=$item['max_rate'];?></td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
 
-                    <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <?php
 get_footer();
 ?>

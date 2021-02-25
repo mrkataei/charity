@@ -9,7 +9,7 @@ $step = 1;
 $errors = [];
 if(isset($_POST['submit_step1'])){
     $username = $_POST['username'];
-    
+
     $sql = 'SELECT username, question_id from users WHERE username="'.$username.'" LIMIT 1';
     $res = mysqli_query($conn, $sql);
     if(mysqli_num_rows($res) > 0){
@@ -52,7 +52,7 @@ if(isset($_POST['submit_step3'])){
     if(mysqli_num_rows($res) > 0){
         $step = 3;
         if($password != $password2)
-        $errors[] = c_Passwords_not_match;
+            $errors[] = c_Passwords_not_match;
         if (strlen($password) < 8) {
             $errors[] = c_PasswordTooShort;
         }
@@ -76,52 +76,52 @@ if(isset($_POST['submit_step3'])){
 }
 ?>
 
-<div class="container">
-    <div class="w-50 mx-auto card card-body my-5">
-        <h1 class="card-title"><?php echo c_resetPassword ?></h1>
-        <?php
-        foreach($errors as $err){ ?>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <?=$err?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        <?php 
-        }
-        ?>
-        <form method="POST" action="reset_password.php">
-            <?php if ($step==1):?>
-                <div class="form-group">
-                    <label for="username"><?php echo c_username ?></label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="<?php echo c_enterUsername ?>" required>
+    <div class="container">
+        <div class="w-50 mx-auto card card-body my-5">
+            <h1 class="card-title"><?php echo c_resetPassword ?></h1>
+            <?php
+            foreach($errors as $err){ ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?=$err?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <button type="submit" name="submit_step1" class="btn btn-primary btn-block"><?php echo c_checkUsername ?></button>
-            <?php elseif($step==2 AND isset($question)): ?>
-                <div class="form-group">
-                    <label for="answer"><?=$question['question']?>:</label>
-                    <input type="text" class="form-control" id="answer" name="answer" placeholder="<?php echo c_enterAswer ?>" required>
+                <?php
+            }
+            ?>
+            <form method="POST" action="reset_password.php">
+                <?php if ($step==1):?>
+                    <div class="form-group">
+                        <label for="username"><?php echo c_username ?></label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="<?php echo c_enterUsername ?>" required>
+                    </div>
+                    <button type="submit" name="submit_step1" class="btn btn-primary btn-block"><?php echo c_checkUsername ?></button>
+                <?php elseif($step==2 AND isset($question)): ?>
+                    <div class="form-group">
+                        <label for="answer"><?=$question['question']?>:</label>
+                        <input type="text" class="form-control" id="answer" name="answer" placeholder="<?php echo c_enterAswer ?>" required>
+                    </div>
+                    <input type="hidden" name="username" value="<?=$username; ?>">
+                    <button type="submit" name="submit_step2" class="btn btn-primary btn-block"><?php echo c_checkAnswer ?></button>
+                <?php elseif($step==3): ?>
+                    <div class="form-group">
+                        <label for="password"><?php echo c_newPassword ?></label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="<?php echo c_enterPassword ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password2"><?php echo c_passwordConfiguration ?></label>
+                        <input type="password" class="form-control" id="password2" name="password2" placeholder="<?php echo c_enterPasswordConfiguration ?>" required>
+                    </div>
+                    <input type="hidden" name="username" value="<?=$username?>">
+                    <input type="hidden" name="answer" value="<?=$answer?>">
+                    <button type="submit" name="submit_step3" class="btn btn-primary btn-block"><?php echo c_setResetPassword ?></button>
+                <?php endif; ?>
+                <div class="mt-2">
+                    <?php echo c_alreadyHaveAcount ?> <a href="login.php"><?php echo c_login ?></a>
                 </div>
-                <input type="hidden" name="username" value="<?=$username; ?>">
-                <button type="submit" name="submit_step2" class="btn btn-primary btn-block"><?php echo c_checkAnswer ?></button>
-            <?php elseif($step==3): ?>
-                <div class="form-group">
-                    <label for="password"><?php echo c_newPassword ?></label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="<?php echo c_enterPassword ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="password2"><?php echo c_passwordConfiguration ?></label>
-                    <input type="password" class="form-control" id="password2" name="password2" placeholder="<?php echo c_enterPasswordConfiguration ?>" required>
-                </div>
-                <input type="hidden" name="username" value="<?=$username?>">
-                <input type="hidden" name="answer" value="<?=$answer?>">
-                <button type="submit" name="submit_step3" class="btn btn-primary btn-block"><?php echo c_setResetPassword ?></button>
-            <?php endif; ?>
-            <div class="mt-2">
-                <?php echo c_alreadyHaveAcount ?> <a href="login.php"><?php echo c_login ?></a>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
 <?php get_footer(); ?>

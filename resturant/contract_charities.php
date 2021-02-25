@@ -35,65 +35,65 @@ $res = mysqli_query($conn, $sql);
 $charities = mysqli_fetch_all($res, MYSQLI_ASSOC);
 ?>
 
-<div class="container">
-    <div class="dashboard">
-        <div class="row">
-            <div class="col-3">
-                <div class="sidebar">
-                    <?php include_once('sidebar.php'); ?>
+    <div class="container">
+        <div class="dashboard">
+            <div class="row">
+                <div class="col-3">
+                    <div class="sidebar">
+                        <?php include_once('sidebar.php'); ?>
+                    </div>
                 </div>
-            </div>
-            <div class="col-9">
-                <div class="mainbar">
-                    <h1>
-                        <?php echo c_ContractCharities ?>
-                    </h1>
-                    <hr/>
-                    <?php
-                    if(isset($submit_charity_msg)){?>
-                        <div class="alert alert-success" role="alert">
-                            <?=$submit_charity_msg?>
-                        </div>
-                    <?php } ?>
-                    <h3><?php echo c_AddNewCharity ?></h3>
-                    <?php if($selectable_charities): ?>
-                    <form class="form-inline mt-3" method="POST" action="contract_charities.php">
-                        <div class="form-group mb-2">
-                            <select name="charity" class="form-control">
-                                <?php
-                                    foreach($selectable_charities as $ch){
-                                        echo '<option value="'.$ch['username'].'">'.$ch['name'].'</option>';
-                                    }
-                                ?>
-                            </select>
-                        </div>
-                        <button name="add_charity_submit" type="submit" class="btn btn-primary ml-3 mb-2"><?php echo c_Insert ?></button>
-                    </form>
-                    <?php else: ?>
-                        <div class="alert alert-secondary" role="alert">
-                            <?php echo c_NoItemToAdd ?>
-                        </div>
-                    <?php endif; ?>
+                <div class="col-9">
+                    <div class="mainbar">
+                        <h1>
+                            <?php echo c_ContractCharities ?>
+                        </h1>
+                        <hr/>
+                        <?php
+                        if(isset($submit_charity_msg)){?>
+                            <div class="alert alert-success" role="alert">
+                                <?=$submit_charity_msg?>
+                            </div>
+                        <?php } ?>
+                        <h3><?php echo c_AddNewCharity ?></h3>
+                        <?php if($selectable_charities): ?>
+                            <form class="form-inline mt-3" method="POST" action="contract_charities.php">
+                                <div class="form-group mb-2">
+                                    <select name="charity" class="form-control">
+                                        <?php
+                                        foreach($selectable_charities as $ch){
+                                            echo '<option value="'.$ch['username'].'">'.$ch['name'].'</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <button name="add_charity_submit" type="submit" class="btn btn-primary ml-3 mb-2"><?php echo c_Insert ?></button>
+                            </form>
+                        <?php else: ?>
+                            <div class="alert alert-secondary" role="alert">
+                                <?php echo c_NoItemToAdd ?>
+                            </div>
+                        <?php endif; ?>
 
-                    <h3><?php echo c_AllCharities ?></h3>
-                    <?php
-                    if(isset($delete_charity_msg)){?>
-                        <div class="alert alert-success" role="alert">
-                            <?=$delete_charity_msg?>
-                        </div>
-                    <?php } ?>
-                    <ul class="list-group">
-                        <?php 
-                        foreach($charities as $ch){
-                            echo '<li class="list-group-item">'.$ch['name'].' <a class="text-danger" href="?action=delete&charity='.$ch['charity'].'">delete</a></li>';
-                        }
-                        ?>
-                    </ul>
+                        <h3><?php echo c_AllCharities ?></h3>
+                        <?php
+                        if(isset($delete_charity_msg)){?>
+                            <div class="alert alert-success" role="alert">
+                                <?=$delete_charity_msg?>
+                            </div>
+                        <?php } ?>
+                        <ul class="list-group">
+                            <?php
+                            foreach($charities as $ch){
+                                echo '<li class="list-group-item">'.$ch['name'].' <a class="text-danger" href="?action=delete&charity='.$ch['charity'].'">delete</a></li>';
+                            }
+                            ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <?php
 get_footer();

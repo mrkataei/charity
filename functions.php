@@ -37,22 +37,22 @@ function is_user(){
 }
 function is_admin(){
     if(is_user())
-     if($_SESSION['USER_ROLE']=='admin') return;
+        if($_SESSION['USER_ROLE']=='admin') return;
     redirect(LOGIN_URL);
 }
 function is_charity(){
     if(is_user())
-     if($_SESSION['USER_ROLE']=='charity') return;
+        if($_SESSION['USER_ROLE']=='charity') return;
     redirect(LOGIN_URL);
 }
 function is_driver(){
     if(is_user())
-     if(($_SESSION['USER_ROLE']=='driver')) return;
+        if(($_SESSION['USER_ROLE']=='driver')) return;
     redirect(LOGIN_URL);
 }
 function is_resturant(){
     if(is_user())
-     if($_SESSION['USER_ROLE']=='resturant') return;
+        if($_SESSION['USER_ROLE']=='resturant') return;
     redirect(LOGIN_URL);
 }
 
@@ -102,7 +102,14 @@ function get_date($item){
         return date('Y/n/d D g:i a', $item['timestamp']);
     }
     else
-        return mds_date("l j F Y a, i : h", $item['timestamp'], 0);
+        return mds_date("l j F Y a, i : h", $item['timestamp'], 1);
+}
+function get_now(){
+    if ($_SESSION['lang']=="EN"){
+        return date('Y/n/d D');
+    }
+    else
+        return mds_date("l j F Y    ", "now", 1);
 }
 function send_mail(){
     if(!empty($_POST["userName"])) {

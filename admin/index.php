@@ -20,54 +20,54 @@ $res = mysqli_query($conn, $sql);
 $requests = mysqli_fetch_all($res, MYSQLI_ASSOC);
 ?>
 
-<div class="container">
-    <div class="dashboard">
-        <div class="row">
-            <div class="col-3">
-                <div class="sidebar">
-                    <?php include_once('sidebar.php'); ?>
+    <div class="container">
+        <div class="dashboard">
+            <div class="row">
+                <div class="col-3">
+                    <div class="sidebar">
+                        <?php include_once('sidebar.php'); ?>
+                    </div>
                 </div>
-            </div>
-            <div class="col-9">
-                <div class="mainbar">
-                    <h1>
-                        <?php echo c_AdminDashboard ?>
-                    </h1>
-                    <hr/>
-                    <h3 class="mt-3"> <?php echo c_TodayTopRequests ?></h3>
-                    <?php if($requests): ?>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th><?php echo c_restaurant ?></th>
-                                <th><?php echo c_charity ?></th>
-                                <th><?php echo c_driver ?></th>
-                                <th><?php echo c_Rate ?></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $i = 0;
-                            foreach($requests as $item){
-                            $i++;    
-                            ?>
+                <div class="col-9">
+                    <div class="mainbar">
+                        <h1>
+                            <?php echo c_AdminDashboard ?>
+                        </h1>
+                        <hr/>
+                        <h3 class="mt-3"> <?php echo c_TodayTopRequests ?></h3>
+                        <?php if($requests): ?>
+                            <table class="table">
+                                <thead>
                                 <tr>
-                                    <td><?=$i?></td>
-                                    <td><?=$item['resturant_name'];?></td>
-                                    <td><?=$item['charity_name'];?></td>
-                                    <td><?=$item['driver_name']?></td>
-                                    <td><?=$item['rate'];?></td>
+                                    <th>#</th>
+                                    <th><?php echo c_restaurant ?></th>
+                                    <th><?php echo c_charity ?></th>
+                                    <th><?php echo c_driver ?></th>
+                                    <th><?php echo c_Rate ?></th>
                                 </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                    <?php endif; ?>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $i = 0;
+                                foreach($requests as $item){
+                                    $i++;
+                                    ?>
+                                    <tr>
+                                        <td><?=$i?></td>
+                                        <td><?=$item['resturant_name'];?></td>
+                                        <td><?=$item['charity_name'];?></td>
+                                        <td><?=$item['driver_name']?></td>
+                                        <td><?=$item['rate'];?></td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <?php
 get_footer();
 ?>

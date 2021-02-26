@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 
 <div class="container">
     <div class="w-50 mx-auto card card-body my-5">
-        <h1 class="card-title" ><?php echo c_login ?></h1>
+        <h1 class="card-title"><?php echo c_login ?></h1>
         <?php
         if(isset($_GET['password_reset'])){?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
             </div>
             <div class="mt-2 row">
                 <div class="col-6">
-                    <a href="register.php"s><?php echo c_signupnow ?></a>
+                    <a href="register.php"><?php echo c_signupnow ?></a>
                 </div>
                 <div class="col-6 text-right">
                     <a href="reset_password.php"><?php echo c_resetPassword ?></a>

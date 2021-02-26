@@ -1,11 +1,4 @@
-@font-face {
-    font-family:'shabnam';
-    src: url('/static/fonts/Shabnam.ttf');
-}
-
 html, body {
-    /*background: #00F260;  !* fallback for old browsers *!*/
-
     background: linear-gradient(to left, #00f260, #0575e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     animation: gradient 30s linear infinite;
     background-size: 300% 300%;

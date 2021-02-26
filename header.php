@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="static/js/main.js"></script>
     <nav class="nav w-100 bg-light px-5 mb-5" id="nav-head" style=" box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);">
         <div class="row" style="width: 100%">

@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 
 <div class="container">
     <div class="w-50 mx-auto card card-body my-5">
-        <h1 class="card-title"><?php echo c_login ?></h1>
+        <h1 class="card-title" ><?php echo c_login ?></h1>
         <?php
         if(isset($_GET['password_reset'])){?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -55,10 +55,13 @@ if(isset($_POST['submit'])){
                 <label for="pass"><?php echo c_password ?></label>
                 <input type="password" class="form-control" id="pass" name="password" placeholder="<?php echo c_enterPassword ?>" required>
             </div>
-            <button type="submit" name="submit" class="btn btn-primary btn-block"><?php echo c_login ?></button>
+            <div class="g-recaptcha" data-sitekey="6LfL0WgaAAAAAA1stDAANHf5vpBUgnT5PkTjH0J-" data-callback="enableBtn"></div>
+            <div>
+                <input class="btn btn-success" name="submit" type="submit" value="<?php echo c_login ?>" id="recaptcha-btn" style="width: 100%"  disabled="disabled">
+            </div>
             <div class="mt-2 row">
                 <div class="col-6">
-                    <a href="register.php"><?php echo c_signupnow ?></a>
+                    <a href="register.php"s><?php echo c_signupnow ?></a>
                 </div>
                 <div class="col-6 text-right">
                     <a href="reset_password.php"><?php echo c_resetPassword ?></a>
@@ -69,5 +72,10 @@ if(isset($_POST['submit'])){
         </form>
     </div>
 </div>
+<script>
+    function enableBtn(){
+        document.getElementById("recaptcha-btn").disabled = false;
+    }
+</script>
 
 <?php get_footer(); ?>

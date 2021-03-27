@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
             ?>
             <form method="POST" action="registration_complete.php">
                 <div class="form-group">
-                    <label for="name"><?php echo c_ResturanName ?></label>
+                    <label for="name"><?php echo c_ResturanName?></label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="<?php echo c_EnterResturantName ?>" required>
                 </div>
                 <h3><?php echo c_Address ?></h3>

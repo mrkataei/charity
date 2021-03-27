@@ -36,7 +36,6 @@ if(isset($_POST['submit'])){
         "'.$long.'",
         "'.$lat.'"
     )';
-    echo $sql;
     $res = mysqli_query($conn, $sql);
     if(!$res){
         $errors[] = "Error: ". mysqli_error($conn);

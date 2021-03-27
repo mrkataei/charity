@@ -157,6 +157,9 @@ if(lang=="EN") {
     define("c_send" , "Send");
     define("c_EmailName", "Name");
     define("c_Contact" , "Contact Us");
+    define("c_ResturanName", "restaurant name :*");
+    define("c_EnterResturantName", "enter your restaurant name");
+
 
 
 

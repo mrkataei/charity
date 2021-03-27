@@ -57,13 +57,13 @@ $type=send_mail();
                     </div>
                 </div>
                 <div class="col-md-6 item text" >
-                    <?php if(isset($type)){?>
+                    <?php if($type == "success"){?>
                         <div class="alert alert-success" id="alerty">
                             <?php echo c_successEmailSend ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
                     <?php }
-                    else { ?>
+                    elseif ($type == "defeat") { ?>
                         <div class="alert alert-danger" id="alerty">
                             <?php echo c_defeatEmailSend ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

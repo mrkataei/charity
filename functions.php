@@ -117,9 +117,12 @@ function send_mail(){
         $email = $_POST["userEmail"];
         $toEmail = "kouroshinfo96@gmail.com";
         $mailHeaders = "From: " . $name . "<". $email .">\r\n";
-        $content = $_POST["message"].'</br>'.$mailHeaders;
+        $content = $_POST["message"].$mailHeaders;
         if(mail($toEmail, $name, $content, $mailHeaders)) {
             return $type = "success";
+        }
+        else{
+            return $type = "defeat";
         }
     }
 }

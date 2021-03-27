@@ -147,6 +147,7 @@ if(lang=="EN") {
             They are sent to charities by volunteer drivers. In this system, a number of charities, restaurants and drivers can
             Register.");
     define("c_successEmailSend" , "Your contact information is received successfully.");
+    define("c_defeatEmailSend" , "Somethings are wrong,try again");
     define("c_nameEmail" , "Your name");
     define("c_Email" , "Email address");
     define("c_YourEmail" , "Your Email");
@@ -156,6 +157,7 @@ if(lang=="EN") {
     define("c_send" , "Send");
     define("c_EmailName", "Name");
     define("c_Contact" , "Contact Us");
+
 
 
 
@@ -313,6 +315,8 @@ else
     define("c_send" , "ارسال");
     define("c_EmailName", "اسم");
     define("c_Contact" , "ارتباط با ما");
+    define("c_defeatEmailSend" , "مشکلی پیش آمده است ، دوباره امتحان کنید");
+
 
 
 
@@ -320,5 +324,3 @@ else
 
 
 }
-
-?>

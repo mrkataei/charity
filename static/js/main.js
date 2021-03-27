@@ -12,3 +12,6 @@ $(document).ready(function (){
         $('alerty').fadeOut(500 , 0 );
     },200)
 });
+function enableBtn(){
+    document.getElementById("recaptcha-btn").disabled = false;
+}

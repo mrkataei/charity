@@ -15,6 +15,7 @@ $type=send_mail();
                         <a href="#"><i class="icon ion-social-twitter"></i></a>
                         <a href="#"><i class="icon ion-social-instagram"></i></a>
                     </div>
+
                     <div class="row" style="height: 30%; padding-top: 20px">
                         <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                             <?php echo c_Contact ?></button>
@@ -43,7 +44,7 @@ $type=send_mail();
                                                     <label for="exampleFormControlTextarea1"><?php echo c_EmailMessage ?></label>
                                                     <textarea class="form-control" name="message" rows="3" placeholder="<?php echo c_YourMessage ?>" required></textarea>
                                                 </div>
-                                                <div class="g-recaptcha" data-sitekey="6LfL0WgaAAAAAA1stDAANHf5vpBUgnT5PkTjH0J-"  data data-callback="enableBtn"></div>
+                                                <div class="g-recaptcha" data-sitekey="6LfL0WgaAAAAAA1stDAANHf5vpBUgnT5PkTjH0J-"  data-callback="enableBtn"></div>
                                                 <div>
                                                     <input class="btn btn-success" type="submit" value="<?php echo c_send ?>" id="recaptcha-btn" style="width: 100%"  disabled="disabled">
                                                 </div>
@@ -59,6 +60,12 @@ $type=send_mail();
                     <?php if(isset($type)){?>
                         <div class="alert alert-success" id="alerty">
                             <?php echo c_successEmailSend ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                    <?php }
+                    else { ?>
+                        <div class="alert alert-danger" id="alerty">
+                            <?php echo c_defeatEmailSend ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
                     <?php } ?>

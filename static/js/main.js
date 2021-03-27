@@ -3,7 +3,6 @@ $(document).ready(function (){
         $('body').addClass('loaded');
     }, 3000)
 });
-
 function redirect(target){
     location.href='auth/login.php';
 };
@@ -12,6 +11,3 @@ $(document).ready(function (){
         $('alerty').fadeOut(500 , 0 );
     },200)
 });
-function enableBtn(){
-    document.getElementById("recaptcha-btn").disabled = false;
-}
